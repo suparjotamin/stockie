@@ -1,4 +1,5 @@
 import numpy as np
+np.seterr(divide='ignore', invalid='ignore')
 
 def is_pattern(pattern, ohlc, ohlc_h1, ohlc_h2):
     open = ohlc[0]

@@ -1,8 +1,23 @@
 from .Candlestick import is_pattern
+from .report import *
+import yfinance as yf
+from IPython.core.display import display, HTML
+import pandas as pd
+from mpl_finance import candlestick2_ochl
+import matplotlib.pyplot as plt
+import json
+import numpy as np
+import os
+
+import matplotlib.pyplot as plt
+import base64
+from io import BytesIO
 
 class stockie:
-    def __init__(self, data):
-        self.data = data
+    def __init__(self, stock_name):
+        self.stock_name = stock_name
+        self.data = yf.download(stock_name).reset_index()
+        data = self.data
         for i in ['Open','High','Low','Close']:
             if i not in data.columns:
                 break
@@ -24,8 +39,8 @@ class stockie:
         self.low_h2 = data['Low'].shift(2).values
         self.close_h2 = data['Close'].shift(2).values  
 
-        print('data loaded successfully')
-
+        print('{} data loaded successfully'.format(stock_name))
+        print(os.getcwd())
 
     def find_pattern(self, name ='all'):
         
@@ -75,3 +90,7 @@ class stockie:
                                      [self.open_h1, self.high_h1, self.low_h1, self.close_h1],
                                      [self.open_h2, self.high_h2, self.low_h2, self.close_h2])
             return temp
+
+    def get_candlestick_report(self,shape=20):
+
+        return display(HTML(generate_HTML_CS_overview(self.find_pattern(), shape= 20)))
