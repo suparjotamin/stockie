@@ -32,8 +32,7 @@ a = stockie(['UNVR.JK','AAPL','AMZN.BA'])
 ```python
 df = a.find_pattern()['AAPL']
 ```
-
-(img)
+<img alt="Notebook Widgets" src="https://github.com/suparjotamin/stockie/blob/master/Asset/sample%20tab%20gif.gif" width="600" />
 
 ### Stock screener
 ```python
