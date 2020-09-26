@@ -26,7 +26,7 @@ from Stockie.stockie import stockie
 ### load in stock name
 To load in the data, We use [yfinance](https://pypi.org/project/yfinance/) package which is included inside. So, the input just nned to be the ticker of the stock which is registered.
 ```python
-a = stockie(['UNVR.JK','AAPL','AMZN.BA'])
+a = stockie(['UNVR.JK','AAPL','C6L.SI'])
 ```
 ### display tabular data
 ```python
