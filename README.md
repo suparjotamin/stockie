@@ -39,5 +39,5 @@ df = a.find_pattern()['AAPL']
 a.get_candlestick_report()
 ```
 
-(gif)
+<img alt="Notebook Widgets" src="https://github.com/suparjotamin/stockie/blob/master/Asset/screener.gif" width="600" />
 
