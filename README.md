@@ -41,3 +41,8 @@ a.get_candlestick_report()
 
 <img alt="Notebook Widgets" src="https://github.com/suparjotamin/stockie/blob/master/Asset/screener.gif" width="600" />
 
+# Debug
+we found that some platform can't display the interactive. You can download the HTML file instead until we fix this bug ( Google Colab can do well)
+```python
+a.get_candlestick_report(create_HTML_file=True, location = 'your_directory/file.html')
+```
